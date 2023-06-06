@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# 8-uppercase.py
-def uppercase(str):
-    """Print a string in uppercase."""
-    for c in str:
+def uppercase(s):
+    for c in s:
         if ord(c) >= 97 and ord(c) <= 122:
-            c = chr(ord(c) - 32)
-        print("{}".format(c), end="")
-    print("")
+            print("{:c}".format(ord(c) - 32), end="")
+        else:
+            print("{:c}".format(ord(c)), end="")
+    print()
