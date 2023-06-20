@@ -4,7 +4,7 @@
 #include <bytesobject.h>
 
 /**
- * print_python - print python
+ * print_python_bytes - print bytes information
  * @p: python object
  * Return: 0
  */
@@ -21,7 +21,6 @@ void print_python_bytes(PyObject *p)
                 return;
         }
         PyBytes_AsStringAndSize(p, &trying_str, &size);
-
         printf("  size: %li\n", size);
         printf("  trying string: %s\n", trying_str);
         if (size < 10)
@@ -34,7 +33,7 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python - print python
+ * print_python_list - python list information
  * @p: python object
  * Return: 0
  */
@@ -42,7 +41,6 @@ void print_python_list(PyObject *p)
 {
         long int size = PyList_Size(p);
         int i;
-
         PyListObject *list = (PyListObject *)p;
         const char *type;
 
@@ -56,5 +54,4 @@ void print_python_list(PyObject *p)
                 if (!strcmp(type, "bytes"))
                         print_python_bytes(list->ob_item[i]);
         }
-
 }
