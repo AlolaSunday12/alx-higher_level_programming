@@ -1,0 +1,60 @@
+# 0-add_integer.txt
+
+===========================
+How to Use 0-add_integer.py
+===========================
+
+This module defines an integer addition function ``add_integer(a, b=98)``.
+
+Usage
+=====
+
+def add_integer(a, b):
+    """
+    Function to add two integers.
+
+    Args:
+        a (int): The first integer.
+        b (int): The second integer.
+
+    Returns:
+        int: The sum of the two integers.
+
+    Raises:
+        TypeError: If either `a` or `b` is not an integer.
+
+    ::
+
+        >>>add_integer = __import__('0-add_integer').add_integer
+
+    ::
+        >>> add_integer(1, 2)
+        3
+
+    ::
+        >>> add_integer(-1, 5)
+        4
+      
+    ::
+
+        >>> add_integer(10, -3)
+        7
+
+    ::
+        >>> add_integer(0, 0)
+        0
+
+    ::
+        >>> add_integer(10, 2.5)
+        Traceback (most recent call last):
+          ...
+        TypeError: Both inputs must be integers.
+        >>> add_integer("Hello", 5)
+        Traceback (most recent call last):
+          ...
+        TypeError: Both inputs must be integers.
+    """
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise TypeError("Both inputs must be integers.")
+    return a + b
+
