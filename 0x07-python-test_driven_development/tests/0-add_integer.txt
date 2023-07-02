@@ -19,3 +19,7 @@ a must be an integer
 ... except Exception as e:
 ...     print(e)
 b must be an integer
+>>> add_integer(0, 0)
+0
+>>> add_integer(-10, 10)
+0
