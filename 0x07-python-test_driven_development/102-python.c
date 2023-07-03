@@ -1,41 +1,28 @@
-#include <Python.h>
+#include "Python.h"
+
 /**
-* print_python_string - Prints information about Python strings.
-* @p: A PyObject string object.
-*/
+ * print_python_string - Prints information about Python strings.
+ * @p: A PyObject string object.
+ */
 void print_python_string(PyObject *p)
 {
-Py_UNICODE *unicode;
-Py_ssize_t length;
+	long int length;
 
-if (!PyUnicode_Check(p))
-{
-printf("[.] string object info\n");
-printf("  [ERROR] Invalid String Object\n");
-return;
-}
+	fflush(stdout);
 
-if (PyUnicode_IS_COMPACT_ASCII(p))
-{
-printf("[.] string object info\n");
-printf("  type: compact ascii\n");
-printf("  length: %zd\n", PyUnicode_GET_LENGTH(p));
-printf("  value: %s\n", PyUnicode_AsUTF8(p));
-}
-else
-{
-printf("[.] string object info\n");
-printf("  type: compact unicode object\n");
-printf("  length: %zd\n", PyUnicode_GET_LENGTH(p));
-unicode = PyUnicode_AsUnicode(p);
-if (unicode)
-{
-printf("  value: ");
-for (length = 0; length < PyUnicode_GET_LENGTH(p); length++)
-{
-printf("%lc", unicode[length]);
-}
-printf("\n");
-}
-}
+	printf("[.] string object info\n");
+	if (strcmp(p->ob_type->tp_name, "str") != 0)
+	{
+		printf("  [ERROR] Invalid String Object\n");
+		return;
+	}
+
+	length = ((PyASCIIObject *)(p))->length;
+
+	if (PyUnicode_IS_COMPACT_ASCII(p))
+		printf("  type: compact ascii\n");
+	else
+		printf("  type: compact unicode object\n");
+	printf("  length: %ld\n", length);
+	printf("  value: %ls\n", PyUnicode_AsWideCharString(p, &length));
 }
