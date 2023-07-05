@@ -2,6 +2,7 @@
 # 4-print_square.py
 """Defines a square-printing function."""
 
+
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
