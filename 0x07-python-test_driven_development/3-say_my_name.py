@@ -2,6 +2,7 @@
 # 2-matrix_divided.py
 """Defines a matrix division function."""
 
+
 def say_my_name(first_name, last_name=""):
     """
     Prints the name based on the provided first name and last name.
