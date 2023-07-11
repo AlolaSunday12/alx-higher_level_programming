@@ -16,6 +16,4 @@ Defaults to an empty string.
         int: The number of characters written to the file.
     """
     with open(filename, 'w', encoding='utf-8') as file:
-        chars_written = file.write(text)
-    
-    return chars_written
+        return file.write(text)
