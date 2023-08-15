@@ -1,5 +1,3 @@
 -- Script to list all tables of a database
-USE <database_name>;
-
--- List all tables in the database
+-- as argument of mysql command
 SHOW TABLES;
