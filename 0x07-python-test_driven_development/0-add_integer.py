@@ -2,6 +2,7 @@
 # 0-add_integer.py
 """Defines an integer addition function."""
 
+
 def add_integer(a, b=98):
     """
     Adds two integers.
@@ -21,6 +22,9 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("a must be an integer")
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
 
     a = int(a)
     b = int(b)

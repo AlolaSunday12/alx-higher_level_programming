@@ -1,5 +1,6 @@
 # 0-add_integer.txt
 
+
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
@@ -14,11 +15,13 @@
 ... except Exception as e:
 ...     print(e)
 a must be an integer
+b must be an integer
 >>> try:
 ...     add_integer(None)
 ... except Exception as e:
 ...     print(e)
 b must be an integer
+a must be an integer
 >>> add_integer(0, 0)
 0
 >>> add_integer(-10, 10)
