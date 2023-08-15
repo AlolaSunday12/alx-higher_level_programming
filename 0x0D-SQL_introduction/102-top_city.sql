@@ -3,8 +3,8 @@
 -- ordered by temperature desc
 
 SELECT city, AVG(temp) AS avg_temp
-FROM weather_data
-WHERE (month = 7 OR month = 8)
+FROM temperatures
+WHERE month = 7 OR month = 8
 GROUP BY city
 ORDER BY avg_temp DESC
 LIMIT 3;

@@ -2,6 +2,6 @@
 -- order by statename
 
 SELECT state, MAX(temp) AS max_temp
-FROM weather_data
+FROM temperatures
 GROUP BY state
 ORDER BY state;
