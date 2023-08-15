@@ -1,14 +1,5 @@
--- Script to create table second_table and add multiple rows
--- Create the table if it doesn't exist
-CREATE TABLE IF NOT EXISTS second_table (
-    id INT,
-    name VARCHAR(256),
-    score INT
-);
-
--- Insert multiple rows into the second_table
-INSERT INTO second_table (id, name, score) VALUES
-(1, 'John', 10),
-(2, 'Alex', 3),
-(3, 'Bob', 14),
-(4, 'George', 8);
+-- lists all rows of the table second_table
+-- from the database hbtn_0c_0
+-- results display score and name
+-- ordered by score
+SELECT score, name FROM second_table ORDER BY score DESC;
