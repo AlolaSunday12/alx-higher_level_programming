@@ -1,5 +1,4 @@
 -- List all genres in the database hbtn_0d_tvshows_rate by their rating sum
-
 -- List genres and their rating sum, sorted by rating sum in descending order
 SELECT tg.name, SUM(tr.rate) AS rating_sum
 FROM tv_genres AS tg
