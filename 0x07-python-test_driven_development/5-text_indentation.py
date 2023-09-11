@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 4-print_square.py
-"""Defines a square-printing function."""
+"""Defines a square-printing function"""
 
 
 def text_indentation(text):
