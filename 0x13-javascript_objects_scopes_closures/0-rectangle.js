@@ -2,8 +2,6 @@
 /**
  * Represents a rectangle
  */
-class Rectangle {
-  constructor() {}
-}
+class Rectangle {}
 
 module.exports = Rectangle;
