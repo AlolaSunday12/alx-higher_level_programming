@@ -6,9 +6,9 @@ const movieId = process.argv[2];
 const url = `https://swapi.dev/api/films/${movieId}/`;
 let characters = [];
 
-request(url, (err, response, body) => {
-  if (err) {
-    console.log(err);
+request(url, (error, response, body) => {
+  if (error) {
+    console.log(error);
     return;
   }
 
@@ -22,9 +22,9 @@ const getCharacters = (index) => {
     return;
   }
 
-  request(characters[index], (err, response, body) => {
-    if (err) {
-      console.log(err);
+  request(characters[index], (error, response, body) => {
+    if (error) {
+      console.log(error);
       return;
     }
     const characterData = JSON.parse(body);
